@@ -6,6 +6,7 @@ public class PhieuDoiTra {
     private Date ngayDoiTra;
     private String maKH;
     private String maNV;
+    private boolean show;
 
     public PhieuDoiTra() {
     }
@@ -15,6 +16,7 @@ public class PhieuDoiTra {
         this.ngayDoiTra = ngayDoiTra;
         this.maKH = maKH;
         this.maNV = maNV;
+        this.show = true; // Default value
     }
 
     public String getMaPhieuDoiTra() {

@@ -9,6 +9,7 @@ public class HoaDon {
     private String maKH;
     private String maKM;
     private String maThue;
+    private boolean show;
 
     public HoaDon() {
     }
@@ -21,6 +22,7 @@ public class HoaDon {
         this.maKH = maKH;
         this.maKM = maKM;
         this.maThue = maThue;
+        this.show = true; // Default value
     }
 
     public String getMaHoaDon() {
@@ -77,6 +79,14 @@ public class HoaDon {
 
     public void setMaThue(String maThue) {
         this.maThue = maThue;
+    }
+
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
     }
 
     @Override

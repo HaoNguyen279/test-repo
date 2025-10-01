@@ -54,7 +54,8 @@ CREATE TABLE KhachHang (
     maKH VARCHAR(50) PRIMARY KEY,
     tenKH NVARCHAR(100),
     soDienThoai VARCHAR(20),
-    diemTichLuy INT
+    diemTichLuy INT,
+    diaChi NVARCHAR(200)
 );
 GO
 -- Tạo bảng NhanVien
@@ -177,6 +178,65 @@ CREATE TABLE ChiTietPhieuNhap (
     FOREIGN KEY (maPhieuNhapThuoc) REFERENCES PhieuNhapThuoc(maPhieuNhapThuoc),
     FOREIGN KEY (maLo) REFERENCES LoThuoc(maLo)
 );
+GO
+
+-- Thêm cột 'show' vào tất cả các bảng
+-- Cột 'show' kiểu BIT (boolean) với giá trị mặc định là 1 (hiển thị)
+-- Được sử dụng để:
+-- - Kiểm soát việc hiển thị/ẩn các bản ghi trong giao diện
+-- - Thực hiện soft delete (đánh dấu xóa mà không xóa thật khỏi database)
+-- - Lọc dữ liệu hiển thị cho người dùng
+-- Giá trị: 1 = hiển thị, 0 = ẩn
+
+ALTER TABLE NhaSanXuat ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE LoThuoc ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE Thuoc ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE ChiTietLoThuoc ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE KhachHang ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE NhanVien ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE TaiKhoan ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE KhuyenMai ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE Thue ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE HoaDon ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE ChiTietHoaDon ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE PhieuDoiTra ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE ChiTietPhieuDoiTra ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE PhieuDat ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE ChiTietPhieuDat ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE PhieuNhapThuoc ADD [show] BIT DEFAULT 1;
+GO
+
+ALTER TABLE ChiTietPhieuNhap ADD [show] BIT DEFAULT 1;
 GO
 
 USE QuanLyNhaThuoc;
@@ -1308,4 +1368,29 @@ SELECT * FROM NhanVien;
 
 -- 17
 SELECT * FROM TaiKhoan;
+
+-- 18 - Kiểm tra cấu trúc bảng sau khi thêm cột 'show'
+-- Kiểm tra một số bảng để đảm bảo cột 'show' đã được thêm thành công
+SELECT TOP 1 * FROM NhaSanXuat;
+SELECT TOP 1 * FROM KhachHang;
+SELECT TOP 1 * FROM NhanVien;
+SELECT TOP 1 * FROM TaiKhoan;
+SELECT TOP 1 * FROM Thuoc;
+SELECT TOP 1 * FROM HoaDon;
+
+-- 19 - Kiểm tra thông tin cột của các bảng
+SELECT TABLE_NAME, COLUMN_NAME, DATA_TYPE, IS_NULLABLE, COLUMN_DEFAULT
+FROM INFORMATION_SCHEMA.COLUMNS 
+WHERE COLUMN_NAME = 'show' 
+ORDER BY TABLE_NAME;
+
+-- 20 - Các câu lệnh mẫu sử dụng cột 'show'
+-- Ẩn một khách hàng (soft delete)
+-- UPDATE KhachHang SET [show] = 0 WHERE maKH = 'KH001';
+
+-- Chỉ hiển thị các khách hàng đang active
+-- SELECT * FROM KhachHang WHERE [show] = 1;
+
+-- Hiển thị lại khách hàng đã ẩn
+-- UPDATE KhachHang SET [show] = 1 WHERE maKH = 'KH001';
 

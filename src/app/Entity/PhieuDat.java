@@ -6,6 +6,7 @@ public class PhieuDat {
     private String maNV;
     private Date ngayDat;
     private String maKH;
+    private boolean show;
 
     public PhieuDat() {
     }
@@ -15,6 +16,7 @@ public class PhieuDat {
         this.maNV = maNV;
         this.ngayDat = ngayDat;
         this.maKH = maKH;
+        this.show = true; // Default value
     }
 
     public String getMaPhieuDat() {
@@ -47,6 +49,14 @@ public class PhieuDat {
 
     public void setMaKH(String maKH) {
         this.maKH = maKH;
+    }
+
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
     }
 
     @Override

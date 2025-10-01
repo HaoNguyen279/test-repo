@@ -3,18 +3,20 @@ import java.util.Date;
 
 public class KhuyenMai {
     private String maKM;
-    private float phanTramGia;
+    private float mucGiamGia;
     private Date ngayApDung;
     private Date ngayKetThuc;
+    private boolean show;
 
     public KhuyenMai() {
     }
 
-    public KhuyenMai(String maKM, float phanTramGia, Date ngayApDung, Date ngayKetThuc) {
+    public KhuyenMai(String maKM, float mucGiamGia, Date ngayApDung, Date ngayKetThuc) {
         this.maKM = maKM;
-        this.phanTramGia = phanTramGia;
+        this.mucGiamGia = mucGiamGia;
         this.ngayApDung = ngayApDung;
         this.ngayKetThuc = ngayKetThuc;
+        this.show = true; // Default value
     }
 
     public String getMaKM() {
@@ -25,12 +27,12 @@ public class KhuyenMai {
         this.maKM = maKM;
     }
 
-    public float getPhanTramGia() {
-        return phanTramGia;
+    public float getMucGiamGia() {
+        return mucGiamGia;
     }
 
-    public void setPhanTramGia(float phanTramGia) {
-        this.phanTramGia = phanTramGia;
+    public void setMucGiamGia(float mucGiamGia) {
+        this.mucGiamGia = mucGiamGia;
     }
 
     public Date getNgayApDung() {
@@ -49,13 +51,22 @@ public class KhuyenMai {
         this.ngayKetThuc = ngayKetThuc;
     }
 
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
+    }
+
     @Override
     public String toString() {
         return "KhuyenMai{" +
                 "maKM='" + maKM + '\'' +
-                ", phanTramGia=" + phanTramGia +
+                ", mucGiamGia=" + mucGiamGia +
                 ", ngayApDung=" + ngayApDung +
                 ", ngayKetThuc=" + ngayKetThuc +
+                ", show=" + show +
                 '}';
     }
 }

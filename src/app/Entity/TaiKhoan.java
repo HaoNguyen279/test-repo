@@ -2,6 +2,7 @@ package app.Entity;
 public class TaiKhoan {
     private String maNV;
     private String matKhau;
+    private boolean show;
 
     public TaiKhoan() {
     }
@@ -9,6 +10,7 @@ public class TaiKhoan {
     public TaiKhoan(String maNV, String matKhau) {
         this.maNV = maNV;
         this.matKhau = matKhau;
+        this.show = true; // Default value
     }
 
     public String getMaNV() {
@@ -25,6 +27,14 @@ public class TaiKhoan {
 
     public void setMatKhau(String matKhau) {
         this.matKhau = matKhau;
+    }
+
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
     }
 
     @Override

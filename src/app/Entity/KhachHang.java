@@ -5,6 +5,7 @@ public class KhachHang {
     private String soDienThoai;
     private int diemTichLuy;
     private String diaChi;
+    private boolean show;
 
     public KhachHang() {
     }
@@ -15,6 +16,7 @@ public class KhachHang {
         this.soDienThoai = soDienThoai;
         this.diemTichLuy = diemTichLuy;
         this.diaChi = diaChi;
+        this.show = true; // Default value
     }
 
     public String getMaKH() {
@@ -55,6 +57,14 @@ public class KhachHang {
 
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
+    }
+
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
     }
 
     @Override

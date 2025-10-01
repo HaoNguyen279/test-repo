@@ -12,6 +12,7 @@ public class ChiTietLoThuoc {
     private String donVi;
     private int soLuongToiThieu;
     private String maNSX;
+    private boolean show;
 
     public ChiTietLoThuoc() {
     }
@@ -28,6 +29,7 @@ public class ChiTietLoThuoc {
         this.donVi = donVi;
         this.soLuongToiThieu = soLuongToiThieu;
         this.maNSX = maNSX;
+        this.show = true; // Default value
     }
 
     public String getMaLo() {
@@ -108,6 +110,14 @@ public class ChiTietLoThuoc {
 
     public void setMaNSX(String maNSX) {
         this.maNSX = maNSX;
+    }
+
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
     }
 
     @Override

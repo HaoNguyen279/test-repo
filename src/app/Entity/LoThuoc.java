@@ -2,6 +2,7 @@ package app.Entity;
 public class LoThuoc {
     private String maLo;
     private String maNSX;
+    private boolean show;
 
     public LoThuoc() {
     }
@@ -9,6 +10,7 @@ public class LoThuoc {
     public LoThuoc(String maLo, String maNSX) {
         this.maLo = maLo;
         this.maNSX = maNSX;
+        this.show = true; // Default value
     }
 
     public String getMaLo() {
@@ -25,6 +27,14 @@ public class LoThuoc {
 
     public void setMaNSX(String maNSX) {
         this.maNSX = maNSX;
+    }
+
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
     }
 
     @Override

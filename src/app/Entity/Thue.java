@@ -6,6 +6,7 @@ public class Thue {
     private float mucThue;
     private Date ngayKetThuc;
     private Date ngayApDung;
+    private boolean show;
 
     public Thue() {
     }
@@ -15,6 +16,7 @@ public class Thue {
         this.mucThue = mucThue;
         this.ngayKetThuc = ngayKetThuc;
         this.ngayApDung = ngayApDung;
+        this.show = true; // Default value
     }
 
     public String getMaThue() {
@@ -47,6 +49,14 @@ public class Thue {
 
     public void setNgayApDung(Date ngayApDung) {
         this.ngayApDung = ngayApDung;
+    }
+
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
     }
 
     @Override

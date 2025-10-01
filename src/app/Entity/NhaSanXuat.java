@@ -4,17 +4,19 @@ package app.Entity;
 public class NhaSanXuat {
     private String maNSX;
     private String tenNSX;
-    private String diaChi;
+    private String diaChiNSX;
     private String soDienThoai;
+    private boolean show;
 
     public NhaSanXuat() {
     }
 
-    public NhaSanXuat(String maNSX, String tenNSX, String diaChi, String soDienThoai) {
+    public NhaSanXuat(String maNSX, String tenNSX, String diaChiNSX, String soDienThoai) {
         this.maNSX = maNSX;
         this.tenNSX = tenNSX;
-        this.diaChi = diaChi;
+        this.diaChiNSX = diaChiNSX;
         this.soDienThoai = soDienThoai;
+        this.show = true; // Default value
     }
 
     public String getMaNSX() {
@@ -33,12 +35,12 @@ public class NhaSanXuat {
         this.tenNSX = tenNSX;
     }
 
-    public String getDiaChi() {
-        return diaChi;
+    public String getDiaChiNSX() {
+        return diaChiNSX;
     }
 
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
+    public void setDiaChiNSX(String diaChiNSX) {
+        this.diaChiNSX = diaChiNSX;
     }
 
     public String getSoDienThoai() {
@@ -49,13 +51,22 @@ public class NhaSanXuat {
         this.soDienThoai = soDienThoai;
     }
 
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
+    }
+
     @Override
     public String toString() {
         return "NhaSanXuat{" +
                 "maNSX='" + maNSX + '\'' +
                 ", tenNSX='" + tenNSX + '\'' +
-                ", diaChi='" + diaChi + '\'' +
+                ", diaChiNSX='" + diaChiNSX + '\'' +
                 ", soDienThoai='" + soDienThoai + '\'' +
+                ", show=" + show +
                 '}';
     }
 }

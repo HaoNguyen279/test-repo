@@ -4,6 +4,7 @@ public class NhanVien {
     private String tenNV;
     private String chucVu;
     private String soDienThoai;
+    private boolean show;
 
     public NhanVien() {
     }
@@ -13,6 +14,7 @@ public class NhanVien {
         this.tenNV = tenNV;
         this.chucVu = chucVu;
         this.soDienThoai = soDienThoai;
+        this.show = true; // Default value
     }
 
     public String getMaNV() {
@@ -45,6 +47,14 @@ public class NhanVien {
 
     public void setSoDienThoai(String soDienThoai) {
         this.soDienThoai = soDienThoai;
+    }
+
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
     }
 
     @Override

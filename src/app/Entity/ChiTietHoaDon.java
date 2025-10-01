@@ -5,6 +5,7 @@ public class ChiTietHoaDon {
     private String maThuoc;
     private int soLuong;
     private float donGia;
+    private boolean show;
 
     public ChiTietHoaDon() {
     }
@@ -14,6 +15,7 @@ public class ChiTietHoaDon {
         this.maThuoc = maThuoc;
         this.soLuong = soLuong;
         this.donGia = donGia;
+        this.show = true; // Default value
     }
 
     public String getMaHoaDon() {
@@ -46,6 +48,14 @@ public class ChiTietHoaDon {
 
     public void setDonGia(float donGia) {
         this.donGia = donGia;
+    }
+
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
     }
 
     @Override
